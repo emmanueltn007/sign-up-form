@@ -49,6 +49,7 @@ h1 {
 }
 
 form {
+    position: relative;
     border-radius: 5px;
     padding: 20px;
     background-color: white;
@@ -59,16 +60,28 @@ form {
 }
 
 input {
+    width: 100%;
     font-weight: bold;
     border-radius: 5px;
     border: 1px hsl(251, 5%, 53%) solid;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 10px;
 }
 
 input:focus {
     color: hsl(249, 10%, 26%);
     border: 1px hsl(248, 32%, 49%) solid;
     outline: none;
+}
+
+.user-input {
+    font-size: 0.5rem;
+}
+
+.form-group > p {
+    font-style: italic;
+    color: hsl(0, 100%, 74%) ;
+    display: flex;
+    justify-content: flex-end;
 }
 
 button {
@@ -99,9 +112,11 @@ span {
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-@media screen and (max-width: 390px) {
+@media screen and (width < 1080px) {
     body {
         background-image: url("images/bg-intro-mobile.png");
+        display: grid;
+        grid-template-rows: 95% 5%;
     }
     .container {
         padding: 1rem;
@@ -120,8 +135,5 @@ span {
 
     .sign-up-offer {
         padding: 5px 40px;
-    }
-
-    footer {
     }
 }
