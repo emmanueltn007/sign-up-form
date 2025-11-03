@@ -77,6 +77,16 @@ input:focus {
     font-size: 0.5rem;
 }
 
+.form-group {
+    position: relative;
+}
+
+.form-group > img {
+    position: absolute;
+    top: 25%;
+    transform: translateX(-300%);
+}
+
 .form-group > p {
     font-style: italic;
     color: hsl(0, 100%, 74%) ;

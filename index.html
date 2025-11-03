@@ -37,34 +37,30 @@
       <form>
 
         <div class="form-group">
-          <input type="text" placeholder="First Name" required>
-          <p class="user-input js-first-name">
-            First name cannot be empty
-          </p>
+          <input class="js-first-name-input" type="text" placeholder="First Name">
+          <img class="js-icon-error" width="15px" src="images/icon-error.svg" alt="error icon">
+          <p class="user-input js-first-name js-alert-message"></p>
         </div>
 
         <div class="form-group">
-          <input type="text" placeholder="Last Name " required>
-          <p class="user-input js-lastname">
-            Last name cannot be empty
-          </p>
+          <input class="js-last-name-input" type="text" placeholder="Last Name">
+          <img class="js-icon-error" width="15px" src="images/icon-error.svg" alt="error icon">
+          <p class="user-input js-last-name js-alert-message"></p>
         </div>
 
         <div class="form-group">
-          <input type="email" placeholder="Email Address" required>
-          <p class="user-input js-user-email">
-            Passwords cannot be empty
-          </p>
+          <input class="js-email-input" type="email" placeholder="Email Address">
+          <img class="js-icon-error" width="15px" src="images/icon-error.svg" alt="error icon">
+          <p class="user-input js-user-email js-alert-message"></p>
         </div>
 
         <div class="form-group">
-          <input type="password" placeholder="Password" required>
-          <p class="user-input js-password">
-            Looks like this is not an email
-          </p>
+          <input class="js-password-input" type="password" placeholder="Password">
+          <img class="js-icon-error" width="15px" src="images/icon-error.svg" alt="error icon">
+          <p class="user-input js-user-password js-alert-message"></p>
         </div>
         
-        <button>
+        <button class="js-submit-button">
           CLAIM YOUR FREE TRIAL
         </button>
         <p class="disclaimer">
