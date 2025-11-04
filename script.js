@@ -1,6 +1,6 @@
 const firstNameInput = document.querySelector('.js-first-name-input');
 const firstNameAlert = document.querySelector('.js-first-name');
-const lastNameInput = document.querySelector('.js-last-name-input')
+const lastNameInput = document.querySelector('.js-last-name-input');
 const lastNameAlert = document.querySelector('.js-last-name');
 const emailInput = document.querySelector('.js-email-input');
 const emailAlert = document.querySelector('.js-user-email');
@@ -11,6 +11,7 @@ const errorIcon2 = document.querySelector('.js-icon-error-2');
 const errorIcon3 = document.querySelector('.js-icon-error-3');
 const errorIcon4 = document.querySelector('.js-icon-error-4');
 const submitBtn = document.querySelector('.js-submit-button');
+const popUpMessage = document.querySelector('.js-pop-up-message');
 
 function handleSubmitEvents () {
     if(firstNameInput.value === '') {
@@ -21,7 +22,9 @@ function handleSubmitEvents () {
     else {
         firstNameAlert.textContent = "";
         errorIcon1.style.display = "none";
+        firstNameInput.style.borderColor = "";
     }
+
     if (lastNameInput.value === '') {
         lastNameAlert.textContent = "Last name cannot be empty";
         errorIcon2.style.display = "inline-block";
@@ -30,10 +33,16 @@ function handleSubmitEvents () {
     else {
         lastNameAlert.textContent = "";
         errorIcon2.style.display = "none";
+        lastNameInput.style.borderColor = "";
     }
 
     const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!validEmail.test(emailInput.value)) {
+    if (emailInput.value === '') {
+        emailAlert.textContent = "Email field cannot be empty";
+        errorIcon3.style.display = "inline-block";
+        emailInput.style.borderColor = "red";
+    }
+    else if (!validEmail.test(emailInput.value)) {
         emailAlert.textContent = "Looks like this is not an email";
         errorIcon3.style.display = "inline-block";
         emailInput.style.borderColor = "red";
@@ -41,7 +50,9 @@ function handleSubmitEvents () {
     else {
         emailAlert.textContent = "";
         errorIcon3.style.display = "none";
+        emailInput.style.borderColor = "";
     }
+
     if (passwordInput.value === '') {
         passwordAlert.textContent = "Password field cannot be empty";
         errorIcon4.style.display = "inline-block";
@@ -50,6 +61,11 @@ function handleSubmitEvents () {
     else {
         passwordAlert.textContent = "";
         errorIcon4.style.display = "none";
+        passwordInput.style.borderColor = "";
+    }
+
+    if (firstNameInput.value !== '' && lastNameInput.value !== '' && validEmail.test(emailInput.value) && passwordInput.value !== '') {
+        window.alert("Thanks for signing up🎉You'll receive an email confirmation shortly.");
     }
 }
 
