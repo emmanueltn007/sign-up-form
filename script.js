@@ -6,45 +6,50 @@ const emailInput = document.querySelector('.js-email-input');
 const emailAlert = document.querySelector('.js-user-email');
 const passwordInput = document.querySelector('.js-password-input');
 const passwordAlert = document.querySelector('.js-user-password');
-const errorIcon = document.querySelector('.js-icon-error');
+const errorIcon1 = document.querySelector('.js-icon-error-1');
+const errorIcon2 = document.querySelector('.js-icon-error-2');
+const errorIcon3 = document.querySelector('.js-icon-error-3');
+const errorIcon4 = document.querySelector('.js-icon-error-4');
 const submitBtn = document.querySelector('.js-submit-button');
 
 function handleSubmitEvents () {
     if(firstNameInput.value === '') {
         firstNameAlert.textContent = "First name cannot be empty";
-        errorIcon.style.display = "inlineblock";
+        errorIcon1.style.display = "inline-block";
         firstNameInput.style.borderColor = "red";
     }
     else {
         firstNameAlert.textContent = "";
-        errorIcon.style.display = "none";
+        errorIcon1.style.display = "none";
     }
     if (lastNameInput.value === '') {
         lastNameAlert.textContent = "Last name cannot be empty";
-        errorIcon.style.display = "inlineblock";
+        errorIcon2.style.display = "inline-block";
         lastNameInput.style.borderColor = "red";
     }
     else {
         lastNameAlert.textContent = "";
-        errorIcon.style.display = "none";
+        errorIcon2.style.display = "none";
     }
-    if (emailInput.value === '') {
+
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!validEmail.test(emailInput.value)) {
         emailAlert.textContent = "Looks like this is not an email";
-        errorIcon.style.display = "inlineblock";
+        errorIcon3.style.display = "inline-block";
         emailInput.style.borderColor = "red";
     }
     else {
         emailAlert.textContent = "";
-        errorIcon.style.display = "none";
+        errorIcon3.style.display = "none";
     }
     if (passwordInput.value === '') {
         passwordAlert.textContent = "Password field cannot be empty";
-        errorIcon.style.display = "inlineblock";
+        errorIcon4.style.display = "inline-block";
         passwordInput.style.borderColor = "red";
     }
     else {
         passwordAlert.textContent = "";
-        errorIcon.style.display = "none";
+        errorIcon4.style.display = "none";
     }
 }
 

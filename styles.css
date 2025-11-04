@@ -13,7 +13,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 6rem;
+    padding: 6rem 6rem 0 6rem;
 }
 
 .description {
@@ -82,6 +82,7 @@ input:focus {
 }
 
 .form-group > img {
+    display: none;
     position: absolute;
     top: 25%;
     transform: translateX(-300%);
@@ -119,16 +120,24 @@ span {
     font-weight: bold;
 }
 
-.attribution { font-size: 11px; text-align: center; }
+.attribution {
+    padding: 2.5em;
+    font-size: 11px; 
+    text-align: center;
+ }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (width < 1080px) {
     body {
         background-image: url("images/bg-intro-mobile.png");
         display: grid;
-        grid-template-rows: 95% 5%;
+        grid-template-rows: 99% 1%;
+        grid-template-areas: 
+        "one"
+        "two";
     }
     .container {
+        grid-area: one;
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -145,5 +154,9 @@ span {
 
     .sign-up-offer {
         padding: 5px 40px;
+    }
+
+    footer {
+        grid-area: two;
     }
 }
