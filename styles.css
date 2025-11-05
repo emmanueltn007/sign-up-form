@@ -95,6 +95,10 @@ input:focus {
     justify-content: flex-end;
 }
 
+.submit-confirmation {
+    color: green;
+}
+
 button {
     color: white;
     background-color: hsl(154, 59%, 51%);
